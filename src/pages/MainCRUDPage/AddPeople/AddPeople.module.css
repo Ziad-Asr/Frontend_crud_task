@@ -1,0 +1,223 @@
+.modalWrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  z-index: 1000;
+}
+
+.modal {
+  width: 500px;
+  height: 500px;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  animation: fadeInDown 0.8s;
+}
+
+button {
+  background-color: transparent;
+  color: #505050;
+  border: none;
+  font-size: 24px;
+}
+
+.btnClose {
+  cursor: pointer;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*Add accounts component*/
+.form {
+  background-color: white;
+  border-radius: 10px;
+  width: 100%;
+  overflow: auto;
+}
+
+.form .search {
+  color: #7a80b1;
+  background: #f6f9fc;
+  border: none;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form .forms-holder-1 .form-holder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form .forms-holder-1 .form-holder .form-inputs {
+  padding: 10px;
+  color: #75799d;
+  font-weight: 500;
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 45%;
+}
+
+.form .forms-holder-1 .form-holder .form-inputs input {
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  color: #3a3e63;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.form .forms-holder-1 .form-holder .form-inputs select {
+  border: 1px solid #ced4da;
+  font-size: 14px;
+  color: #3a3e63;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.form .form-input .form-input-hidden {
+  padding: 10px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-inputs .options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-inputs label {
+  color: #75799d;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-inputs input {
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #3a3e63;
+  font-weight: 400;
+  padding: 10px;
+}
+
+.form-inputs textarea {
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #3a3e63;
+  font-weight: 400;
+  padding: 10px;
+  min-height: 100px;
+}
+
+.save-button {
+  color: #fff;
+  background: #04a564;
+  border-color: transparent;
+  background: -webkit-linear-gradient(left, #04a564 1%, #27c384 100%);
+  background: linear-gradient(to right, #04a564 1%, #27c384 100%);
+  padding: 5px;
+  /* border-radius: 5px; */
+  cursor: pointer;
+  float: right;
+  margin: 0 20px 10px 0;
+  border-bottom: 5px solid white;
+}
+
+.form-inputs-checkbox {
+  padding: 10px;
+  color: #75799d;
+  font-weight: 500;
+  font-size: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 13%;
+}
+
+.form-inputs-checkbox-tax {
+  padding: 10px;
+  color: #75799d;
+  font-weight: 500;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.en {
+  justify-content: left;
+}
+
+.ar {
+  justify-content: right;
+}
+
+.form-inputs-checkbox-last {
+  padding: 10px;
+  color: #75799d;
+  font-weight: 500;
+  font-size: 20px;
+
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5rem;
+  width: 25%;
+  padding-bottom: 30px;
+}
+
+.form-inputs-checkbox label {
+  color: #75799d;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-inputs-checkbox input {
+  font-size: 14px;
+  color: #3a3e63;
+  font-weight: 400;
+}
+
+/*Add accounts component*/
+
+.btnClose {
+  cursor: pointer;
+}
