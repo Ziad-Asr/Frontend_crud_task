@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAllPeople } from "../../store/slices/peopleSlice/thunk";
 import { useDispatch, useSelector } from "react-redux";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { Box } from "@mui/material";
+import { Box, Grid } from "@mui/material";
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import DeletePeople from "../../pages/MainCRUDPage/DeletePeople/DeletePeople";
@@ -31,7 +31,6 @@ const Tabel = () => {
       flex: 2,
       headerAlign: "center",
       align: "center",
-      Font: "Cairo",
     },
     {
       field: "first_name",
@@ -84,7 +83,7 @@ const Tabel = () => {
     {
       field: "Actions",
       headerName: "Actions",
-      flex: 1,
+      flex: 2,
       headerAlign: "center",
       align: "center",
       renderCell: (params) => (
@@ -113,58 +112,61 @@ const Tabel = () => {
   ];
 
   return (
-    <Box>
-      <Box
-        sx={{
-          // height: 550,
-          height: 590,
-          width: "90%",
-          mx: "auto",
-          marginTop: 2,
-          marginBottom: 2,
-          backgroundColor: "rgb(239, 239, 239)",
-        }}
-      >
-        <DataGrid
-          slots={{
-            toolbar: GridToolbar,
-          }}
-          rows={People.map((Peoplee) => ({
-            id: Peoplee?.id,
-            first_name: Peoplee.first_name,
-            middle_name: Peoplee.middle_name,
-            last_name: Peoplee.last_name,
-            email: Peoplee.email,
-            dob: Peoplee.dob,
-            description: Peoplee.description,
-          }))}
-          columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 10,
-              },
-            },
-          }}
-          pageSizeOptions={[5, 10, 20]}
-        />
-        <EditPeople
-          show={showEditComponent}
-          onClose={() => {
-            setShowEditComponent(false);
-            dispatch(fetchAllPeople());
-          }}
-          idSec={rowId}
-        />
-        <DeletePeople
-          onClose={() => {
-            setShowDeleteComponent(false);
-            dispatch(fetchAllPeople());
-          }}
-          show={showDeleteComponent}
-          idSec={rowId}
-        />
-      </Box>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container justifyContent="center">
+        <Grid item xs={10} md={12} lg={8}>
+          <Box
+            sx={{
+              // height: { xs: 400, md: 590 },
+              width: "100%",
+              mx: "auto",
+              marginTop: 2,
+              marginBottom: 2,
+              backgroundColor: "rgb(239, 239, 239)",
+            }}
+          >
+            <DataGrid
+              slots={{
+                toolbar: GridToolbar,
+              }}
+              rows={People.map((Peoplee) => ({
+                id: Peoplee?.id,
+                first_name: Peoplee.first_name,
+                middle_name: Peoplee.middle_name,
+                last_name: Peoplee.last_name,
+                email: Peoplee.email,
+                dob: Peoplee.dob,
+                description: Peoplee.description,
+              }))}
+              columns={columns}
+              initialState={{
+                pagination: {
+                  paginationModel: {
+                    pageSize: 10,
+                  },
+                },
+              }}
+              pageSizeOptions={[5, 10, 20]}
+            />
+            <EditPeople
+              show={showEditComponent}
+              onClose={() => {
+                setShowEditComponent(false);
+                dispatch(fetchAllPeople());
+              }}
+              idSec={rowId}
+            />
+            <DeletePeople
+              onClose={() => {
+                setShowDeleteComponent(false);
+                dispatch(fetchAllPeople());
+              }}
+              show={showDeleteComponent}
+              idSec={rowId}
+            />
+          </Box>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
