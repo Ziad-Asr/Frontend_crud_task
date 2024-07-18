@@ -117,7 +117,7 @@ const Tabel = () => {
         <Grid item xs={10} md={12} lg={8}>
           <Box
             sx={{
-              // height: { xs: 400, md: 590 },
+              height: { xs: 400, md: 590 },
               width: "100%",
               mx: "auto",
               marginTop: 2,

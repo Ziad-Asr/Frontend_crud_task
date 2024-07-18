@@ -221,3 +221,21 @@ button {
 .btnClose {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .modal {
+    /* Adjust modal styles for smaller screens */
+    width: 90%;
+    margin: 10% auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Adjust input styles for smaller screens */
+  .form-inputs {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

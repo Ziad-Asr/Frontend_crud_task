@@ -1,5 +1,5 @@
 .modalWrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -11,52 +11,34 @@
 }
 
 .modal {
-  min-width: 800px;
+  width: 80%;
+  max-width: 500px;
   height: auto;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  border-radius: 10px;
+  background-color: white;
   animation: fadeInDown 0.8s;
 }
 
-button {
-  background-color: transparent;
-  color: #505050;
-  border: none;
-  font-size: 24px;
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/*Delete branch component*/
-
 .form {
-  background-color: white;
-  border-radius: 10px;
-  min-height: 100px;
-  width: 500px;
+  padding: 20px;
+}
 
+.confirmDelete {
   display: flex;
   flex-direction: column;
-}
-
-.confern-delete {
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  margin-top: 20px;
+}
+
+.deleteButton {
+  background-color: #ff3939;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 .btnClose {
@@ -64,28 +46,14 @@ button {
   color: #505050;
   border: none;
   font-size: 24px;
-  float: right;
-  margin: 10px;
   cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
-.close-button-wrapper {
-  width: 100%;
-  background-color: black;
-}
-
-.delete-button {
-  color: #fff;
-  background: #ff3939;
-  border-color: transparent;
-  padding: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 20px;
-}
-
-/*Delete branch component*/
-
-.btnClose {
-  cursor: pointer;
+@media (max-width: 600px) {
+  .modal {
+    width: 90%;
+  }
 }

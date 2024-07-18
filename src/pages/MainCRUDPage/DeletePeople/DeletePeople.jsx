@@ -6,7 +6,7 @@ import {
   fetchAllPeople,
 } from "../../../store/slices/peopleSlice/thunk";
 
-const DeleteInvoice = ({ onClose, show, idSec }) => {
+const DeletePeople = ({ onClose, show, idSec }) => {
   const dispatch = useDispatch();
 
   let menuRef = useRef();
@@ -15,7 +15,6 @@ const DeleteInvoice = ({ onClose, show, idSec }) => {
     let handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         onClose();
-        console.log(menuRef.current);
       }
     };
 
@@ -26,12 +25,12 @@ const DeleteInvoice = ({ onClose, show, idSec }) => {
     };
   }, []);
 
-  const deletePersonByIDHandelar = async (id) => {
+  const deletePersonByIDHandler = async (id) => {
     await dispatch(deletePeople(id));
   };
 
-  const onDeleteHandelar = () => {
-    deletePersonByIDHandelar(idSec);
+  const onDeleteHandler = () => {
+    deletePersonByIDHandler(idSec);
     dispatch(fetchAllPeople());
     onClose();
   };
@@ -44,17 +43,14 @@ const DeleteInvoice = ({ onClose, show, idSec }) => {
     <div className={styles.modalWrapper}>
       <div className={styles.modal} ref={menuRef}>
         <div className={styles.form}>
-          <div className={styles["delete-button-wrapper"]}>
+          <div className={styles.deleteButtonWrapper}>
             <button onClick={onClose} className={`${styles.btnClose}`}>
               X
             </button>
           </div>
-          <div className={styles["confern-delete"]}>
+          <div className={styles.confirmDelete}>
             <h1>Confirm Deletion</h1>
-            <button
-              className={styles["delete-button"]}
-              onClick={onDeleteHandelar}
-            >
+            <button className={styles.deleteButton} onClick={onDeleteHandler}>
               Delete
             </button>
           </div>
@@ -64,4 +60,4 @@ const DeleteInvoice = ({ onClose, show, idSec }) => {
   );
 };
 
-export default DeleteInvoice;
+export default DeletePeople;
