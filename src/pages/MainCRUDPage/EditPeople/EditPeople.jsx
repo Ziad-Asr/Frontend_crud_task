@@ -10,19 +10,18 @@ import styles from "./EditPeople.module.css";
 const EditPeople = ({ show, onClose, idSec }) => {
   let { singlePerson } = useSelector((state) => state.peopleSlice);
 
-  console.log("singlePerson");
-  console.log(singlePerson);
-
   const dispatch = useDispatch();
 
-  const [first_name, setFirstName] = useState(singlePerson?.first_name || "");
-  const [middle_name, setMiddleName] = useState(
-    singlePerson?.middle_name || ""
+  const [first_name, setFirstName] = useState(
+    singlePerson[0]?.first_name || ""
   );
-  const [last_name, setLastName] = useState(singlePerson?.last_name || "");
-  const [email, setEmail] = useState(singlePerson?.email || "");
+  const [middle_name, setMiddleName] = useState(
+    singlePerson[0]?.middle_name || ""
+  );
+  const [last_name, setLastName] = useState(singlePerson[0]?.last_name || "");
+  const [email, setEmail] = useState(singlePerson[0]?.email || "");
   const [Description, setDescription] = useState(
-    singlePerson?.description || ""
+    singlePerson[0]?.description || ""
   );
 
   useEffect(() => {
@@ -30,11 +29,11 @@ const EditPeople = ({ show, onClose, idSec }) => {
   }, [dispatch, idSec]);
 
   useEffect(() => {
-    setFirstName(singlePerson?.first_name || "");
-    setMiddleName(singlePerson?.middle_name || "");
-    setLastName(singlePerson?.last_name || "");
-    setEmail(singlePerson?.email || "");
-    setDescription(singlePerson?.description || "");
+    setFirstName(singlePerson[0]?.first_name || "");
+    setMiddleName(singlePerson[0]?.middle_name || "");
+    setLastName(singlePerson[0]?.last_name || "");
+    setEmail(singlePerson[0]?.email || "");
+    setDescription(singlePerson[0]?.description || "");
   }, [singlePerson]);
 
   let menuRef = useRef();
