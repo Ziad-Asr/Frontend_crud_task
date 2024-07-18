@@ -121,7 +121,8 @@ const Tabel = () => {
           width: "90%",
           mx: "auto",
           marginTop: 2,
-          backgroundColor: "white",
+          marginBottom: 2,
+          backgroundColor: "rgb(239, 239, 239)",
         }}
       >
         <DataGrid
