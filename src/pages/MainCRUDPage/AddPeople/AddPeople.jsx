@@ -10,6 +10,15 @@ import {
 const AddPeople = ({ show, onClose }) => {
   let menuRef = useRef();
 
+  function getFormattedDate() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
+
   useEffect(() => {
     let handler = (e) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -48,6 +57,7 @@ const AddPeople = ({ show, onClose }) => {
       last_name: last_name,
       email: email,
       description: Description,
+      dob: getFormattedDate(),
     };
 
     await dispatch(createPeople(newPerson));

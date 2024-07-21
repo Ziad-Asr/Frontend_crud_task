@@ -1,5 +1,5 @@
 .modalWrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -8,8 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
-
-  z-index: 1000;
+  z-index: 999;
 }
 
 .modal {
@@ -48,7 +47,6 @@ button {
   }
 }
 
-/*Add accounts component*/
 .form {
   background-color: white;
   border-radius: 10px;
@@ -216,15 +214,12 @@ button {
   font-weight: 400;
 }
 
-/*Add accounts component*/
-
 .btnClose {
   cursor: pointer;
 }
 
 @media (max-width: 768px) {
   .modal {
-    /* Adjust modal styles for smaller screens */
     width: 90%;
     margin: 10% auto;
 
@@ -233,7 +228,6 @@ button {
     justify-content: center;
   }
 
-  /* Adjust input styles for smaller screens */
   .form-inputs {
     width: 100%;
     margin-bottom: 10px;

@@ -112,13 +112,13 @@ const Tabel = () => {
   ];
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <Grid container justifyContent="center">
         <Grid item xs={10} md={12} lg={8}>
           <Box
             sx={{
               height: { xs: 400, md: 590 },
-              width: "100%",
+              minWidth: 900,
               mx: "auto",
               marginTop: 2,
               marginBottom: 2,
